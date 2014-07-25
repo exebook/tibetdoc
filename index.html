@@ -1,4 +1,5 @@
 <meta charset=utf-8>
+
 <script>
 states = {
 	bold: 98,italic: 105,underline: 117,strike: 111,
@@ -195,7 +196,7 @@ function act() {
 		data = TibetDocParse(data.toString())
 		data = TibetDocJSONToHTML(data)
 		a.innerHTML = data
-		var b = new Blob([data], { type:"text/html" });
+		var b = new Blob([data], { encoding:'utf-8',type:'text/html' });
 		console.log('blop', JSON.stringify(b))
 		var url = URL.createObjectURL(b);
 		downLink.href = url
