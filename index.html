@@ -196,6 +196,7 @@ function act() {
 		data = TibetDocParse(data.toString())
 		data = TibetDocJSONToHTML(data)
 		a.innerHTML = data
+		data = '<meta charset=utf-8>\n' + data
 		var b = new Blob([data], { encoding:'utf-8',type:'text/html' });
 		console.log('blop', JSON.stringify(b))
 		var url = URL.createObjectURL(b);
